@@ -112,3 +112,74 @@ Explanation:
 =================================================
 
 """
+class Shape:
+    def __init__(self, name):
+        self.name = name
+    
+    def area(self):
+        raise NotImplementedError()
+    
+    def perimeter(self):
+        raise NotImplementedError()
+    
+    def describe(self):
+        print(f"{self.name}: area={self.area()}, perimeter={self.perimeter()}")
+
+
+class Circle(Shape):
+    def __init__(self, radius):
+        super().__init__("Circle") 
+        self.radius = radius
+    
+    def area(self):
+        return 3.14159 * self.radius * self.radius
+    
+    def perimeter(self):
+        return 2 * 3.14159 * self.radius
+
+
+class Rectangle(Shape):
+    
+    def __init__(self, length, width):
+        super().__init__("Rectangle") 
+        self.length = length
+        self.width = width
+    
+    def area(self):
+        return self.length * self.width
+    
+    def perimeter(self):
+        return 2 * (self.length + self.width)
+
+
+class Triangle(Shape):
+    
+    def __init__(self, a, b, c):
+        super().__init__("Triangle") 
+        self.a = a  
+        self.b = b  
+        self.c = c  
+    
+    def area(self):
+        s = self.perimeter() / 2  
+        return (s * (s - self.a) * (s - self.b) * (s - self.c)) ** 0.5
+    
+    def perimeter(self):
+        return self.a + self.b + self.c
+
+if __name__ == "__main__":
+    s = Shape("Generic")
+    try:
+        s.describe()
+    except NotImplementedError as e:
+        print(f"Shape raises NotImplementedError ")
+    print()
+    
+    shapes = [
+        Circle(5),
+        Rectangle(4, 6),
+        Triangle(3, 4, 5),
+    ]
+    
+    for shape in shapes:
+        shape.describe()
