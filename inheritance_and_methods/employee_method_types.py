@@ -124,8 +124,8 @@ class Employee:
 
 
 if __name__ == "__main__":
-    e1 = Employee("Alice", 100_000)
-    e2 = Employee("Bob",   80_000)
+    e1 = Employee("Alice", 100000)
+    e2 = Employee("Bob",   80000)
     e3 = Employee.from_string("Carol,75000")
 
     e1.apply_raise()
