@@ -251,3 +251,4 @@ if __name__ == "__main__":
     
     total = m.team_total_salary()
     print(f"Team total salary -> {total}")
+    

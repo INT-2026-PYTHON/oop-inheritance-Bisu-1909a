@@ -142,3 +142,5 @@ if __name__ == "__main__":
     print(f"is_valid_salary(50000)  -> {Employee.is_valid_salary(50000)}")
     print(f"is_valid_salary(-100)   -> {Employee.is_valid_salary(-100)}")
     print(f"is_valid_salary(\"abc\")  -> {Employee.is_valid_salary('abc')}")
+    
+    
